@@ -24,6 +24,7 @@ function Home() {
   };
 
   return (
+    <div className="max-w-xl mx-auto">
     <div className="space-y-4">
       <div className="flex gap-2">
         <input
@@ -34,7 +35,7 @@ function Home() {
           placeholder="What do you need to do?"
         />
         <button
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
           onClick={handleAdd}
         >
           Add
@@ -48,6 +49,7 @@ function Home() {
           todos.map((todo) => <TodoItem key={todo.id} todo={todo} />)
         )}
       </div>
+    </div>
     </div>
   );
 }

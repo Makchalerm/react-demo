@@ -1,16 +1,20 @@
-import Home from './pages/Home';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Navbar from "./components/Navbar";
 
 function App() {
-  
-
   return (
-    <div className="min-h-screen bgg-gray-100 flex p-4">
-        <div className='max-w-xl mx-auto'>
-        <h1 className='text-5xl font-bold text-center mb-6'>To-do List 📃</h1>  
-        <Home />
-        </div>
-    </div>
-  )
+    <Router>
+      <Navbar />
+      <div className="bg-gray-100 min-h-screen p-4">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;
