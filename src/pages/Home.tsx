@@ -4,6 +4,7 @@ import { useTodoStore } from '../store/todoStore';
 import { TodoItem } from '../components/TodoItem';
 import { Todo } from '../features/todo/types';
 import '../index.css';
+const now = new Date().toISOString();
 
 function Home() {
   const [text, setText] = useState('');
@@ -17,6 +18,8 @@ function Home() {
       id: uuidv4(),
       text: text,
       completed: false,
+      createdAt: now,
+      updatedAt: now,
     };
 
     addTodo(newTodo);

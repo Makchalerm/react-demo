@@ -19,10 +19,18 @@ export const TodoItem = ({ todo }: Props) => {
       >
         {todo.text}
       </span>
+      <p className="text-xs text-gray-500 mt-1">
+        Created: {new Date(todo.createdAt).toLocaleString()}
+      </p>
+      <p className="text-xs text-gray-500">
+        Updated: {new Date(todo.updatedAt).toLocaleString()}
+      </p>
+
       <button
         onClick={() => deleteTodo(todo.id)}
         className="ml-4 text-red-500 hover:text-red-700"
-      >Delete
+      >
+        Delete
       </button>
     </div>
   );
